@@ -15,9 +15,13 @@ var counter = function(input) {
   return result;
 }
 
-$(document).ready(function(){
-  input = prompt("Input your number");
-  counter(input);
-  alert(result);
+$(document).ready(function() {
 
+  $("#userNumber").submit(function(event) {
+    event.preventDefault();
+
+    var input = $("#userInput").val();
+    counter(input);
+    $("#output").append("<h5>" + result + "</h5>");
+  });
 });
